@@ -1,7 +1,5 @@
 package com.sy;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +8,25 @@ public class Main {
         String result = ReplaceString.replaceSpace(target);
         System.out.println(result);
 
-	// write your code here
+        ListNode pre = new ListNode();
+        ListNode first = new ListNode();
+        for (int i = 0; i < 4; i++) {
+            int temp = (int) (Math.random() * 100);
+            System.out.println(temp);
+            ListNode node = new ListNode(temp);
+            pre.next = node;
+            pre = node;
+            if (i == 0) {
+                first = node;
+            }
+        }
+        pre = pre.next;
+        int [] arr = ReversLinkedList.reversePrint(first);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
+
     }
+
 }
